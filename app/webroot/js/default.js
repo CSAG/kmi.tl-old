@@ -15,8 +15,7 @@
               url: $scope.inputUrl
             }).success(function(data) {
               $scope.urls.push(data);
-              $scope.inputUrl = data.short;
-              return ele('#inputUrl')[0].select();
+              return ele('#inputUrl').val(data.alias).get(0).select();
             });
           } else {
             return $scope.inputUrlClass = 'has-error';
@@ -30,3 +29,7 @@
   ]);
 
 }).call(this);
+
+/*
+//@ sourceMappingURL=default.map
+*/

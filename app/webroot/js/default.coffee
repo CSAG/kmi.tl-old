@@ -19,18 +19,18 @@ angular.module('kmitl', [])
 
           $scope.inputUrlClass = ''
 
+          # shorten url
           $http.post('pages/ajax_add_url.json', { url: $scope.inputUrl }).success (data)->
 
             $scope.urls.push data
 
-            $scope.inputUrl = data.short
-
-            ele('#inputUrl')[0].select()
+            ele('#inputUrl').val(data.alias).get(0).select()
 
         else
 
           $scope.inputUrlClass = 'has-error'
 
+    # select on click
     $scope.clickInputUrl = ()->
       ele('#inputUrl')[0].select()
 

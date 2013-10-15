@@ -63,4 +63,3 @@ class View{
  */
 class AppHelper{	
 }
-?>

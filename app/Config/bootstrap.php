@@ -107,3 +107,12 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+// config time zone
+date_default_timezone_set('Asia/Bangkok');
+
+// config plugins
+Configure::write('Recaptcha.publicKey', '6LfVx8QSAAAAAMGx3MsTTUQb4qpSpinprzgKSPpj');
+Configure::write('Recaptcha.privateKey', '6LfVx8QSAAAAAACRQIcZj1_um7pLmbHQ5_ham71K');
+
+CakePlugin::loadAll();

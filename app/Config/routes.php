@@ -27,11 +27,33 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 	Router::connect('/', array('controller' => 'pages', 'action' => 'index' ));
+
+    Router::connect('/:alias.qr',
+        array('controller'=>'pages', 'action'=>'qr'),
+        array(
+            'pass'=> array('alias'),
+            'alias'=> '([a-zA-Z0-9_-]){6}'
+        )
+    );
+    Router::connect('/:alias.info',
+        array('controller'=>'pages', 'action'=>'info'),
+        array(
+            'pass'=> array('alias'),
+            'alias'=> '([a-zA-Z0-9_-]){6}'
+        )
+    );
+    Router::connect('/:alias',
+        array('controller'=>'pages', 'action'=>'jump'),
+        array(
+            'pass'=> array('alias'),
+            'alias'=> '([a-zA-Z0-9_-]){6}'
+        )
+    );
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
 	//Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
-    Router::parseExtensions();
+    Router::parseExtensions('json');
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.
