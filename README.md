@@ -1,7 +1,7 @@
 KMI.TL (CSAG Project)
 =====================
 
-KMI.TL is an url shortener website
+KMI.TL is an url shortener website http://kmi.tl/
 
 **Project owner**
 
@@ -11,7 +11,7 @@ Chokchai Puttan
 
 - CakePhp
 - jQuery
-- Angular
+- Angularjs
 - TwitterBootstrap
 - Less
 - Coffee
