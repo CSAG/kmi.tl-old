@@ -3,11 +3,11 @@ KMI.TL (CSAG Project)
 
 Url shortener source code
 
-*Project owner*
+**Project owner**
 
 Chokchai Puttan
 
-*Tools*
+**Tools**
 
 - CakePhp
 - jQuery
@@ -16,7 +16,7 @@ Chokchai Puttan
 - Less
 - Coffee
 
-*IDE*
+**IDE**
 
 PhpStorm
 
