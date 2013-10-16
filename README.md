@@ -1,7 +1,7 @@
 KMI.TL (CSAG Project)
 =====================
 
-Url shortener source code
+KMI.TL is an url shortener website
 
 **Project owner**
 
