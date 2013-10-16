@@ -1,67 +1,81 @@
-<?php
-/**
- * Routes configuration
- *
- * In this file, you set up routes to your controllers and their actions.
- * Routes are very important mechanism that allows you to freely connect
- * different urls to chosen controllers and their actions (functions).
- *
- * PHP 5
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.Config
- * @since         CakePHP(tm) v 0.2.9
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
-/**
- * Here, we are connecting '/' (base path) to controller called 'Pages',
- * its action called 'display', and we pass a param to select the view file
- * to use (in this case, /app/View/Pages/home.ctp)...
- */
-	Router::connect('/', array('controller' => 'pages', 'action' => 'index' ));
+    <?php
+    /**
+     * Routes configuration
+     *
+     * In this file, you set up routes to your controllers and their actions.
+     * Routes are very important mechanism that allows you to freely connect
+     * different urls to chosen controllers and their actions (functions).
+     *
+     * PHP 5
+     *
+     * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+     * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+     *
+     * Licensed under The MIT License
+     * For full copyright and license information, please see the LICENSE.txt
+     * Redistributions of files must retain the above copyright notice.
+     *
+     * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+     * @link          http://cakephp.org CakePHP(tm) Project
+     * @package       app.Config
+     * @since         CakePHP(tm) v 0.2.9
+     * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+     */
+    /**
+     * Here, we are connecting '/' (base path) to controller called 'Pages',
+     * its action called 'display', and we pass a param to select the view file
+     * to use (in this case, /app/View/Pages/home.ctp)...
+     */
+    Router::connect('/', array('controller' => 'pages', 'action' => 'index'));
+    Router::connect('/pages/:action', array('controller' => 'pages'));
+
+    Router::connect('/admin', array('controller' => 'admin'));
+    Router::connect('/admin/:action/*', array('controller' => 'admin'));
+
+    Router::connect('/urls', array('controller' => 'urls'));
+    Router::connect('/urls/:action/*', array('controller' => 'urls'));
+
+    Router::connect('/requests', array('controller' => 'requests'));
+    Router::connect('/requests/:action/*', array('controller' => 'requests'));
+
+    Router::connect('/users', array('controller' => 'users'));
+    Router::connect('/users/:action/*', array('controller' => 'users'));
 
     Router::connect('/:alias.qr',
-        array('controller'=>'pages', 'action'=>'qr'),
+        array('controller' => 'pages', 'action' => 'qr'),
         array(
-            'pass'=> array('alias'),
-            'alias'=> '([a-zA-Z0-9_-]){6}'
+            'pass' => array('alias'),
+            'alias' => '[a-zA-Z0-9_-]+'
         )
     );
     Router::connect('/:alias.info',
-        array('controller'=>'pages', 'action'=>'info'),
+        array('controller' => 'pages', 'action' => 'info'),
         array(
-            'pass'=> array('alias'),
-            'alias'=> '([a-zA-Z0-9_-]){6}'
+            'pass' => array('alias'),
+            'alias' => '[a-zA-Z0-9_-]+'
         )
     );
     Router::connect('/:alias',
-        array('controller'=>'pages', 'action'=>'jump'),
+        array('controller' => 'pages', 'action' => 'jump'),
         array(
-            'pass'=> array('alias'),
-            'alias'=> '([a-zA-Z0-9_-]){6}'
+            'pass' => array('alias'),
+            'alias' => '[a-zA-Z0-9_-]+'
         )
     );
-/**
- * ...and connect the rest of 'Pages' controller's urls.
- */
-	//Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
-    Router::parseExtensions('json');
-/**
- * Load all plugin routes. See the CakePlugin documentation on
- * how to customize the loading of plugin routes.
- */
-	CakePlugin::routes();
 
-/**
- * Load the CakePHP default routes. Only remove this if you do not want to use
- * the built-in default routes.
- */
-	require CAKE . 'Config' . DS . 'routes.php';
+    /**
+     * ...and connect the rest of 'Pages' controller's urls.
+     */
+    //Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+    Router::parseExtensions('json');
+    /**
+     * Load all plugin routes. See the CakePlugin documentation on
+     * how to customize the loading of plugin routes.
+     */
+    CakePlugin::routes();
+
+    /**
+     * Load the CakePHP default routes. Only remove this if you do not want to use
+     * the built-in default routes.
+     */
+    require CAKE . 'Config' . DS . 'routes.php';

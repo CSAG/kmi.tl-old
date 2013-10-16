@@ -1,9 +1,5 @@
 <?php
 /** @var $this View */
-
-$this->layout = 'kmi.tl';
-$this->extend('/Common/template');
-
 ?>
 <h2><?php echo $name; ?></h2>
 <p class="error">

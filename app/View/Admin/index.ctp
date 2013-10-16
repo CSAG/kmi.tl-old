@@ -34,7 +34,10 @@ $this->extend('/Common/template')
                     <td><?= $req['name'] ?></td>
                     <td><?= $this->Html->link($req['email'], 'mailto:' . $req['email']) ?></td>
                     <td><?= $req['alias'] ?></td>
-                    <td class="long-url"><?= $this->Html->link($req['url']) ?></td>
+                    <td>
+                        <div class="long-url" style="width: 300px;">
+                            <?= $this->Html->link($req['url']) ?></td>
+                        </div>
                     <td><?= $this->Time->nice($req['datetime']) ?></td>
                     <td class="text-center">
                         <a class="btn btn-xs btn-success" href="<?= Router::url("/admin/approve/{$req['alias']}") ?>">
@@ -65,7 +68,11 @@ $this->extend('/Common/template')
                 <tr>
                     <td><?= $i + 1 ?></td>
                     <td><?= $this->Html->link(Router::url("/{$url['alias']}", true)) ?></td>
-                    <td class="long-url"><?= $this->Html->link($url['url']) ?></td>
+                    <td>
+                        <div class="long-url" style="width: 300px;">
+                            <?= $this->Html->link($url['url']) ?>
+                        </div>
+                    </td>
                     <td><?= $this->Time->nice($url['create_date']) ?></td>
                     <td><?= $value['User']['username'] ?></td>
                     <td class="text-center">

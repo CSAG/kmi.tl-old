@@ -39,7 +39,7 @@ class AdminController extends AppController
     {
         $CustomUrls = $this->Url->find('all', array(
             'conditions' => array('Url.user_id >' => 0),
-            'order' => 'Url.create_date'
+            'order' => 'Url.alias'
         ));
 
         $RequestUrls = $this->Request->find('all', array(

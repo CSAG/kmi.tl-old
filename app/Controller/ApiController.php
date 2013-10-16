@@ -128,11 +128,11 @@ class ApiController extends AppController {
 
         } else {
 
-            $alias = $this->UrlShortener->generateRandomString(6);
+            $alias = $this->UrlShortener->generateRandomString(5);
 
             // generate until is unique
             while ($this->Url->exists($alias)) {
-                $alias = $this->UrlShortener->generateRandomString(6);
+                $alias = $this->UrlShortener->generateRandomString(5);
             }
 
             // save to database

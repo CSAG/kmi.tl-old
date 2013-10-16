@@ -8,7 +8,7 @@ $this->extend('/Common/template');
             <span class="glyphicon glyphicon-heart color-primary"></span>
             Custom Url
         </h1>
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered table-hover table-responsive">
             <tr class="danger">
                 <th>#</th>
                 <th>Alias</th>
@@ -20,7 +20,11 @@ $this->extend('/Common/template');
                 <tr>
                     <td><?= $i + 1 ?></td>
                     <td><?= $this->Html->link(Router::url("/{$url['alias']}", true)) ?></td>
-                    <td class="long-url"><?= $this->Html->link($url['url']) ?></td>
+                    <td>
+                        <div class="long-url" style="width: 400px;">
+                            <?= $this->Html->link($url['url'], null, array('class'=>'long-url')) ?>
+                        </div>
+                    </td>
                     <td><?= $this->Html->link('Info', Router::url("/{$url['alias']}.info", true)) ?></td>
                 </tr>
             <? endforeach; ?>

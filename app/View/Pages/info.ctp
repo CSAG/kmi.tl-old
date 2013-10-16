@@ -17,8 +17,12 @@ $this->extend('/Common/template');
                 <td><?=$this->Html->link(Router::url("/{$Url['alias']}", true))?></td>
             </tr>
             <tr>
-                <th class="bg-warning long-url">Url</th>
-                <td><?=$this->Html->link($Url['url'])?></td>
+                <th class="bg-warning">Url</th>
+                <td>
+                    <div class="long-url" style="width: 300px;">
+                        <?=$this->Html->link($Url['url'])?>
+                    </div>
+                </td>
             </tr>
             <tr>
                 <th class="bg-warning">QRcode</th>
