@@ -4,7 +4,7 @@
 $this->extend('/Common/template');
 ?>
 <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-6 col-md-offset-3 bg-white">
         <h1 class="page-header">
             <?php echo 'Login'; ?>
         </h1>
@@ -18,5 +18,6 @@ $this->extend('/Common/template');
         <div class="text-right">
             <?php echo $this->Form->end(array('label' => 'Login', 'class' => 'btn btn-primary', 'style'=>'padding-left:30px; padding-right:30px;')); ?>
         </div>
+        <br/>
     </div>
 </div>
